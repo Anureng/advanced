@@ -83,17 +83,19 @@ const AllProducts = () => {
                     <p>Search</p>
                     <input type="text" className='border-none focus:outline-none' placeholder='Enter Title...' value={search} onChange={(e) => setSearch(e.target.value)} />
                 </div>
-                <div className=' w-fit flex items-center p-4'>
+                <div className=' w-fit flex items-center p-4 space-x-3'>
                     <CiShoppingCart className='h-8 w-8' />
                     <p className='text-xl'>
                         {
                             cart.length
                         }
                     </p>
+                    <p className='text-xl'>Total Amount :-  {cart.reduce((total, el) => total + el.price, 0)}</p>
+
                 </div>
             </div>
             {/* <button onClick={Alldata}>Get Datat</button> */}
-            <div className='w-full p-4  h-screen grid grid-cols-1 lg:grid-cols-2   xl:grid-cols-3 2xl:grid-cols-4 gap-4 content-start '>
+            <div className='w-full p-4  h-screen grid grid-cols-1 lg:grid-cols-2   xl:grid-cols-3  gap-4 content-start '>
                 {filter.map((el) => (
                     <div className=' w-96 h-fit p-4 border rounded-xl space-y-3'>
                         <img src={el.thumbnail} alt="Loading..." className='h-48 w-80' />
