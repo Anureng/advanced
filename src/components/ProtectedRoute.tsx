@@ -42,8 +42,9 @@ const ProtectedRoute = ({ component: Component, ...rest }: any) => {
     return (
         <div>
             {isAuthenticated ? <AllProducts /> : (
-                <div>
-                    <p><a href="/Login">Login First</a></p>
+                <div className='flex items-center justify-center space-x-2 h-48'>
+                    <p>Click the button to login</p>
+                    <p><a className='bg-blue-500 text-white px-1 py-2 rounded-xl ' href="/Login">Login First</a></p>
                 </div>
             )}
         </div>
